@@ -2,11 +2,14 @@
   "name": "gptcoder",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts",
+    "build": "tsup src/** --format esm --dts  --clean --legacy-output dist/index.js",
+    "start": "node dist/esm/index.js",
+    "dev": "nodemon --watch src/** --exec \"tsup src/** --format esm --dts  --clean --legacy-output dist\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc"
   },
@@ -17,5 +20,10 @@
     "@changesets/cli": "^2.26.2",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "openai": "^3.3.0"
   }
 }

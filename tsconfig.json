@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "target": "ES2022" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
     /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
+    "module": "ES2022" /* Specify what module code is generated. */,
+    "moduleResolution": "NodeNext",
 
     "noEmit": true /* Disable emitting files from a compilation. */,
+    "allowImportingTsExtensions": true,
 
     /* Interop Constraints */
     // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
